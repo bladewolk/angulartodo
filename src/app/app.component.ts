@@ -15,12 +15,10 @@ export class AppComponent implements OnInit {
   loading = true;
 
   getTodos(): void {
-    setTimeout(() => {
-      this.todoService.getTodos().then(resp => {
-        this.todos = resp;
-        this.loading = false;
-      });
-    }, 500);
+    this.todoService.getTodos().then(resp => {
+      this.todos = resp;
+      this.loading = false;
+    });
   }
 
   createTodo(value: string) {
